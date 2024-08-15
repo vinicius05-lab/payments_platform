@@ -37,6 +37,15 @@ As requisições devem ser feitas nos seguintes formatos JSON:
     "userType": "COMMON"
 }
 ```
+
+## Requisição para efetuar login:
+```json
+{
+    "email": "user@exemple.com",
+    "password": "123user"
+}
+```
+
 ## Requisição para realizar transação:
 ```json
 {
