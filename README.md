@@ -55,6 +55,234 @@ As requisições devem ser feitas nos seguintes formatos JSON:
 }
 ```
 
+# Sobre as rotas da API:
+- Cadastro de Usuário:
+`POST /users/register`
+Rota responsável pelo cadastro de novos usuários.
+
+- Login de Usuário:
+`POST /login`
+Rota responsável pelo login dos usuários. Nesta rota o servidor irá retornar um token que deverá ser usado para a autenticação.
+
+- Listar Todos os Usuários:
+`GET /users`
+Rota que exibe todos os usuários cadastrados. Somente usuários com a role de ADMIN podem acessar esta rota.
+### Exemplo de resposta:
+
+```json
+   [
+    {
+        "id": 1,
+        "firstName": "João",
+        "lastName": "Silva",
+        "document": "123.456.789-09",
+        "email": "joao.silva@example.com",
+        "password": "$2a$10$wfi88j8YxRNbVctu.48bXeASyL4eqVy38cbfvLQJZnXUq17anWD0q",
+        "balance": 1250.00,
+        "userType": "COMMON",
+        "role": "ADMIN",
+        "authorities": [
+            {
+                "authority": "ROLE_ADMIN"
+            },
+            {
+                "authority": "ROLE_USER"
+            }
+        ],
+        "username": "joao.silva@example.com",
+        "accountNonExpired": true,
+        "accountNonLocked": true,
+        "credentialsNonExpired": true,
+        "enabled": true
+    },
+    {
+        "id": 2,
+        "firstName": "Guilherme",
+        "lastName": "Silva",
+        "document": "987.654.321-00",
+        "email": "gui@example.com",
+        "password": "$2a$10$0xj7ytr8GFW4Mgu75p9GyOkYFXq/LXqBYS2s77hsQzt4DXOO9Rmka",
+        "balance": 500.00,
+        "userType": "COMMON",
+        "role": "ADMIN",
+        "authorities": [
+            {
+                "authority": "ROLE_ADMIN"
+            },
+            {
+                "authority": "ROLE_USER"
+            }
+        ],
+        "username": "gui@example.com",
+        "accountNonExpired": true,
+        "accountNonLocked": true,
+        "credentialsNonExpired": true,
+        "enabled": true
+    }
+]
+
+```
+- Exibir Usuário por ID:
+`GET /users/{id}`
+Rota que exibe os detalhes de um usuário específico, identificado pelo ID. Somente usuários com a role de ADMIN podem acessar esta rota.
+### Exemplo de resposta:
+
+```json
+{
+    "id": 1,
+    "firstName": "João",
+    "lastName": "Silva",
+    "document": "123.456.789-09",
+    "email": "joao.silva@example.com",
+    "password": "$2a$10$wfi88j8YxRNbVctu.48bXeASyL4eqVy38cbfvLQJZnXUq17anWD0q",
+    "balance": 1250.00,
+    "userType": "COMMON",
+    "role": "ADMIN",
+    "authorities": [
+        {
+            "authority": "ROLE_ADMIN"
+        },
+        {
+            "authority": "ROLE_USER"
+        }
+    ],
+    "username": "joao.silva@example.com",
+    "accountNonExpired": true,
+    "accountNonLocked": true,
+    "credentialsNonExpired": true,
+    "enabled": true
+}
+
+```
+
+- Exibir Usuário por ID:
+`GET /users/my-transactions`
+Essa rota retorna todas as transações realizadas pelo usuário autenticado.
+### Exemplo de resposta:
+
+```json
+[
+    {
+        "id": 1,
+        "amount": 250.00,
+        "sender": {
+            "id": 2,
+            "firstName": "Guilherme",
+            "lastName": "Silva",
+            "document": "987.654.321-00",
+            "email": "gui@example.com",
+            "password": "$2a$10$0xj7ytr8GFW4Mgu75p9GyOkYFXq/LXqBYS2s77hsQzt4DXOO9Rmka",
+            "balance": 500.00,
+            "userType": "COMMON",
+            "role": "ADMIN",
+            "authorities": [
+                {
+                    "authority": "ROLE_ADMIN"
+                },
+                {
+                    "authority": "ROLE_USER"
+                }
+            ],
+            "username": "gui@example.com",
+            "accountNonExpired": true,
+            "accountNonLocked": true,
+            "credentialsNonExpired": true,
+            "enabled": true
+        },
+        "receiver": {
+            "id": 1,
+            "firstName": "João",
+            "lastName": "Silva",
+            "document": "123.456.789-09",
+            "email": "joao.silva@example.com",
+            "password": "$2a$10$wfi88j8YxRNbVctu.48bXeASyL4eqVy38cbfvLQJZnXUq17anWD0q",
+            "balance": 1250.00,
+            "userType": "COMMON",
+            "role": "ADMIN",
+            "authorities": [
+                {
+                    "authority": "ROLE_ADMIN"
+                },
+                {
+                    "authority": "ROLE_USER"
+                }
+            ],
+            "username": "joao.silva@example.com",
+            "accountNonExpired": true,
+            "accountNonLocked": true,
+            "credentialsNonExpired": true,
+            "enabled": true
+        },
+        "transactionDate": "2024-08-15T18:05:30.063451"
+    }
+]
+
+```
+
+- Exibir Usuário por ID:
+`GET /users/received-transactions`
+Essa rota retorna todas as transações recebidas pelo usuário autenticado.
+
+### Exemplo de resposta:
+
+```json
+[
+    {
+        "id": 1,
+        "amount": 250.00,
+        "sender": {
+            "id": 2,
+            "firstName": "Guilherme",
+            "lastName": "Silva",
+            "document": "987.654.321-00",
+            "email": "gui@example.com",
+            "password": "$2a$10$0xj7ytr8GFW4Mgu75p9GyOkYFXq/LXqBYS2s77hsQzt4DXOO9Rmka",
+            "balance": 500.00,
+            "userType": "COMMON",
+            "role": "ADMIN",
+            "authorities": [
+                {
+                    "authority": "ROLE_ADMIN"
+                },
+                {
+                    "authority": "ROLE_USER"
+                }
+            ],
+            "username": "gui@example.com",
+            "accountNonExpired": true,
+            "accountNonLocked": true,
+            "credentialsNonExpired": true,
+            "enabled": true
+        },
+        "receiver": {
+            "id": 1,
+            "firstName": "João",
+            "lastName": "Silva",
+            "document": "123.456.789-09",
+            "email": "joao.silva@example.com",
+            "password": "$2a$10$wfi88j8YxRNbVctu.48bXeASyL4eqVy38cbfvLQJZnXUq17anWD0q",
+            "balance": 1250.00,
+            "userType": "COMMON",
+            "role": "ADMIN",
+            "authorities": [
+                {
+                    "authority": "ROLE_ADMIN"
+                },
+                {
+                    "authority": "ROLE_USER"
+                }
+            ],
+            "username": "joao.silva@example.com",
+            "accountNonExpired": true,
+            "accountNonLocked": true,
+            "credentialsNonExpired": true,
+            "enabled": true
+        },
+        "transactionDate": "2024-08-15T18:05:30.063451"
+    }
+]
+
+```
 # Obs:
 - Todos os usuários por padrão são salvo no banco de dados com a role de ADMIN:
 
