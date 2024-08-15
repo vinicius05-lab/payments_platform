@@ -59,10 +59,10 @@ As requisições devem ser feitas nos seguintes formatos JSON:
 - Cadastro de Usuário: `POST /users/register`  
 Rota responsável pelo cadastro de novos usuários.
 
-## Login de Usuário: `POST /login`  
+- Login de Usuário: `POST /login`  
 Rota responsável pelo login dos usuários. Nesta rota o servidor irá retornar um token que deverá ser usado para a autenticação.
 
-## Listar Todos os Usuários: `GET /users`  
+- Listar Todos os Usuários: `GET /users`  
 Rota que exibe todos os usuários cadastrados. Somente usuários com a role de ADMIN podem acessar esta rota.  
 ### Exemplo de resposta:
 
