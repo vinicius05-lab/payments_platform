@@ -56,16 +56,28 @@ As requisições devem ser feitas nos seguintes formatos JSON:
 ```
 
 # Sobre as rotas da API:
-- Cadastro de Usuário: `POST /users/register`  
-Rota responsável pelo cadastro de novos usuários.
 
-- Login de Usuário: `POST /login`  
-Rota responsável pelo login dos usuários. Nesta rota o servidor irá retornar um token que deverá ser usado para a autenticação.
+### Cadastro de Usuário
+
+- **Rota:** `POST /users/register`
+- **Descrição:** Cadastra um novo usuário.
+
+### Login de Usuário
+
+- **Rota:** `POST /login`
+- **Descrição:** Realiza o login do usuário, retornando um token JWT.
+
+### Envio de Transferências
+
+- **Rota:** `POST /transactions`
+- **Descrição:** Realiza a transferência de um usuário para o outro.
+- **Permissão:** Para ter acesso a esta rota o usuário deve está autenticado.
 
 ### Listagem de Usuários
 
 - **Rota:** `GET /users`
 - **Descrição:** Retorna a lista de todos os usuários cadastrados. Apenas usuários com a role `ADMIN` podem acessar esta rota.
+- **Permissão:** Para ter acesso a esta rota o usuário deve ser um administrador.
 - **Exemplo de Resposta:**
 
 ```json
@@ -121,9 +133,12 @@ Rota responsável pelo login dos usuários. Nesta rota o servidor irá retornar 
 ]
 
 ```
-## Exibir Usuário por ID: `GET /users/{id}`  
-Rota que exibe os detalhes de um usuário específico, identificado pelo ID. Somente usuários com a role de ADMIN podem acessar esta rota.  
-### Exemplo de resposta:
+### Exibição de Usuário por ID
+
+- **Rota:** `GET /users/{id}`
+- **Descrição:** Retorna os detalhes de um usuário específico, identificado pelo ID. Apenas usuários com a role `ADMIN` podem acessar esta rota.
+- **Permissão:** Para ter acesso a esta rota o usuário deve ser um administrador.
+- **Exemplo de Resposta:**
 
 ```json
 {
@@ -153,10 +168,13 @@ Rota que exibe os detalhes de um usuário específico, identificado pelo ID. Som
 
 ```
 
-## Exibir Usuário por ID: `GET /users/my-transactions`  
-Essa rota retorna todas as transações realizadas pelo usuário autenticado.  
-### Exemplo de resposta:
+### Listar Transações do Usuário Autenticado
 
+- **Rota:** `GET /users/my-transactions`
+- **Descrição:** Retorna todas as transações realizadas pelo usuário autenticado.
+- **Permissão:** Para ter acesso a esta rota o usuário deve está autenticado.
+- **Exemplo de Resposta:**
+  
 ```json
 [
     {
@@ -216,9 +234,12 @@ Essa rota retorna todas as transações realizadas pelo usuário autenticado.
 
 ```
 
-## Exibir Usuário por ID: `GET /users/received-transactions`  
-Essa rota retorna todas as transações recebidas pelo usuário autenticado.  
-### Exemplo de resposta:
+### Listar Transações Recebidas pelo Usuário Autenticado
+
+- **Rota:** `GET /users/received-transactions`
+- **Descrição:** Retorna todas as transações recebidas pelo usuário autenticado.
+- **Permissão:** Para ter acesso a esta rota o usuário deve está autenticado.
+- **Exemplo de Resposta:**
 
 ```json
 [
