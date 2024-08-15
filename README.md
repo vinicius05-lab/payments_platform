@@ -71,13 +71,13 @@ As requisições devem ser feitas nos seguintes formatos JSON:
 
 - **Rota:** `POST /transactions`
 - **Descrição:** Realiza a transferência de um usuário para o outro.
-- **Permissão:** Para ter acesso a esta rota o usuário deve está autenticado.
+- **Permissão:** Para ter acesso a esta rota, o usuário deve está autenticado.
 
 ### Listagem de Usuários
 
 - **Rota:** `GET /users`
 - **Descrição:** Retorna a lista de todos os usuários cadastrados. Apenas usuários com a role `ADMIN` podem acessar esta rota.
-- **Permissão:** Para ter acesso a esta rota o usuário deve ser um administrador.
+- **Permissão:** Para ter acesso a esta rota, o usuário deve ser um administrador.
 - **Exemplo de Resposta:**
 
 ```json
@@ -137,7 +137,7 @@ As requisições devem ser feitas nos seguintes formatos JSON:
 
 - **Rota:** `GET /users/{id}`
 - **Descrição:** Retorna os detalhes de um usuário específico, identificado pelo ID. Apenas usuários com a role `ADMIN` podem acessar esta rota.
-- **Permissão:** Para ter acesso a esta rota o usuário deve ser um administrador.
+- **Permissão:** Para ter acesso a esta rota, o usuário deve ser um administrador.
 - **Exemplo de Resposta:**
 
 ```json
@@ -172,7 +172,7 @@ As requisições devem ser feitas nos seguintes formatos JSON:
 
 - **Rota:** `GET /users/my-transactions`
 - **Descrição:** Retorna todas as transações realizadas pelo usuário autenticado.
-- **Permissão:** Para ter acesso a esta rota o usuário deve está autenticado.
+- **Permissão:** Para ter acesso a esta rota, o usuário deve está autenticado.
 - **Exemplo de Resposta:**
   
 ```json
@@ -238,7 +238,7 @@ As requisições devem ser feitas nos seguintes formatos JSON:
 
 - **Rota:** `GET /users/received-transactions`
 - **Descrição:** Retorna todas as transações recebidas pelo usuário autenticado.
-- **Permissão:** Para ter acesso a esta rota o usuário deve está autenticado.
+- **Permissão:** Para ter acesso a esta rota, o usuário deve está autenticado.
 - **Exemplo de Resposta:**
 
 ```json
