@@ -64,7 +64,7 @@ Rota responsável pelo cadastro de novos usuários.
 `POST /login`  
 Rota responsável pelo login dos usuários. Nesta rota o servidor irá retornar um token que deverá ser usado para a autenticação.
 
-- Listar Todos os Usuários:
+## Listar Todos os Usuários:
 `GET /users`  
 Rota que exibe todos os usuários cadastrados. Somente usuários com a role de ADMIN podem acessar esta rota.  
 ### Exemplo de resposta:
