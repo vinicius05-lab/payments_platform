@@ -56,16 +56,13 @@ As requisições devem ser feitas nos seguintes formatos JSON:
 ```
 
 # Sobre as rotas da API:
-- Cadastro de Usuário:
-`POST /users/register`  
+## Cadastro de Usuário: `POST /users/register`  
 Rota responsável pelo cadastro de novos usuários.
 
-- Login de Usuário:
-`POST /login`  
+## Login de Usuário: `POST /login`  
 Rota responsável pelo login dos usuários. Nesta rota o servidor irá retornar um token que deverá ser usado para a autenticação.
 
-## Listar Todos os Usuários:
-`GET /users`  
+## Listar Todos os Usuários: `GET /users`  
 Rota que exibe todos os usuários cadastrados. Somente usuários com a role de ADMIN podem acessar esta rota.  
 ### Exemplo de resposta:
 
@@ -122,8 +119,7 @@ Rota que exibe todos os usuários cadastrados. Somente usuários com a role de A
 ]
 
 ```
-- Exibir Usuário por ID:
-`GET /users/{id}`  
+## Exibir Usuário por ID: `GET /users/{id}`  
 Rota que exibe os detalhes de um usuário específico, identificado pelo ID. Somente usuários com a role de ADMIN podem acessar esta rota.  
 ### Exemplo de resposta:
 
@@ -155,8 +151,7 @@ Rota que exibe os detalhes de um usuário específico, identificado pelo ID. Som
 
 ```
 
-- Exibir Usuário por ID:
-`GET /users/my-transactions`  
+## Exibir Usuário por ID: `GET /users/my-transactions`  
 Essa rota retorna todas as transações realizadas pelo usuário autenticado.  
 ### Exemplo de resposta:
 
@@ -219,8 +214,7 @@ Essa rota retorna todas as transações realizadas pelo usuário autenticado.
 
 ```
 
-- Exibir Usuário por ID:  
-`GET /users/received-transactions`  
+## Exibir Usuário por ID: `GET /users/received-transactions`  
 Essa rota retorna todas as transações recebidas pelo usuário autenticado.  
 ### Exemplo de resposta:
 
