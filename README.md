@@ -6,8 +6,8 @@ Este projeto é um sistema de plataforma de envio e recebimento de transferênci
 # Sobre o funcionamento da API:
 Para que esta API funcione corretamente na sua máquina você deve realizar as configurações corretas do banco de dados mysql no "application.properties":
 
-- **Banco de Dados MySQL:**
-   - Configure o acesso ao seu banco de dados MySQL no arquivo `application.properties`.
+- **Banco de H2 Database:**
+   - Configure o acesso ao seu banco de dados H2 no arquivo `application.properties`.
    - Exemplo:
      ```properties
         spring.datasource.url=jdbc:h2:mem:db_transaction
