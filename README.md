@@ -67,7 +67,7 @@ Rota responsável pelo login dos usuários. Nesta rota o servidor irá retornar 
 - Listar Todos os Usuários:
 `GET /users`
 Rota que exibe todos os usuários cadastrados. Somente usuários com a role de ADMIN podem acessar esta rota.
-### Exemplo de resposta:
+Exemplo de resposta:
 
 ```json
    [
@@ -125,7 +125,7 @@ Rota que exibe todos os usuários cadastrados. Somente usuários com a role de A
 - Exibir Usuário por ID:
 `GET /users/{id}`
 Rota que exibe os detalhes de um usuário específico, identificado pelo ID. Somente usuários com a role de ADMIN podem acessar esta rota.
-### Exemplo de resposta:
+Exemplo de resposta:
 
 ```json
 {
@@ -158,7 +158,7 @@ Rota que exibe os detalhes de um usuário específico, identificado pelo ID. Som
 - Exibir Usuário por ID:
 `GET /users/my-transactions`
 Essa rota retorna todas as transações realizadas pelo usuário autenticado.
-### Exemplo de resposta:
+Exemplo de resposta:
 
 ```json
 [
@@ -223,7 +223,7 @@ Essa rota retorna todas as transações realizadas pelo usuário autenticado.
 `GET /users/received-transactions`
 Essa rota retorna todas as transações recebidas pelo usuário autenticado.
 
-### Exemplo de resposta:
+Exemplo de resposta:
 
 ```json
 [
