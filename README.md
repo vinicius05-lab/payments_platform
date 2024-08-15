@@ -56,7 +56,7 @@ As requisições devem ser feitas nos seguintes formatos JSON:
 ```
 
 # Sobre as rotas da API:
-## Cadastro de Usuário: `POST /users/register`  
+Cadastro de Usuário: `POST /users/register`  
 Rota responsável pelo cadastro de novos usuários.
 
 ## Login de Usuário: `POST /login`  
